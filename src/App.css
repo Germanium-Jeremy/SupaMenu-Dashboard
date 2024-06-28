@@ -1,0 +1,7 @@
+.bg-img {
+     background: url(./assets/cake2.jpg) fixed no-repeat;
+}
+
+::-webkit-scrollbar {
+     display: none;
+}
