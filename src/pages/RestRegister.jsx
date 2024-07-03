@@ -34,7 +34,7 @@ const RestRegister = () => {
                <div className={`w-2/3`}>
                     <div className={`shadow-md rounded-md w-4/5`}>
                          <h1 className={`font-bold px-10 py-2`}>1. Create Your Restaurant Profile</h1>
-                         <div className={`py-[1rem] gap-[2rem] flex flex-col`}>
+                         <div className={`py-[1rem] gap-[1.2rem] flex flex-col`}>
                               {restMains.map((rest) => (
                                    <button key={rest.id} className={`flex flex-row gap-2 items-center border-l-4 ${activeLink === rest.id ? "border-amber-600" : "border-transparent"}`} onClick={() => {
                                         setActiveLink(rest.id)
@@ -42,8 +42,8 @@ const RestRegister = () => {
                                    }}>
                                         <span className={`rounded-full text-2xl text-white min-w-10 min-h-10 ${activeLink === rest.id ? "bg-amber-600" : "bg-gray-500"} flex justify-center items-center ml-[1.5rem]`}>{rest.id}</span>
                                         <div className={`flex flex-col px-[1rem]`}>
-                                             <h3 className='font-bold'>{rest.heading}</h3>
-                                             <p className={`text-gray-600 text-sm`}>{rest.desc}</p>
+                                             <h3 className='font-bold text-sm'>{rest.heading}</h3>
+                                             <p className={`text-gray-600 text-xs`}>{rest.desc}</p>
                                         </div>
                                    </button>
                               ))}

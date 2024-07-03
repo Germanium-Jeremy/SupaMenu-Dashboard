@@ -24,20 +24,6 @@ const items = [
           desc: "Kaffir Lime Vodka, Lemongrass, Ginder, Cirtus",
           price: 5000
      },
-     {
-          id: 4,
-          image: Image1,
-          title: "Tom Yummy",
-          desc: "Kaffir Lime Vodka, Lemongrass, Ginder, Cirtus",
-          price: 5000
-     },
-     {
-          id: 5,
-          image: Image2,
-          title: "Tom Yummy",
-          desc: "Kaffir Lime Vodka, Lemongrass, Ginder, Cirtus",
-          price: 5000
-     },
 ]
 
 export default items

@@ -1,37 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
+import itemsAdd from '../data/itemsAdd'
 
 const CreateMenu = () => {
+     const [orderType, setOrderType] = useState(itemsAdd[0])
   return (
-     <div className={`p-[2rem] rounded-sm shadow-md w-full`}>
+     <form className={`px-[2rem] p-[1rem] rounded-sm shadow-md w-full`}>
           <div className={`flex gap-4 w-full`}>
-               <button className={`px-[1rem] py-[.8rem] rounded-xl border border-black text-amber-600`}>Drink</button>
-               <button className={`px-[1rem] py-[.8rem] rounded-xl border border-black text-amber-600`}>Starter</button>
-               <button className={`px-[1rem] py-[.8rem] rounded-xl border border-black text-amber-600`}>Appetizer</button>
-               <button className={`px-[1rem] py-[.8rem] rounded-xl border border-black text-amber-600`}>Desert</button>
-               <button className={`px-[1rem] py-[.8rem] rounded-xl border border-black text-amber-600`}>Main</button>
+               {itemsAdd.map((category) => (
+                    <button key={category.id} onClick={() => setOrderType(category)} 
+                         className={`px-[1rem] py-[.4rem] rounded-xl border border-black ${orderType.id === category.id ? `border-black bg-amber-600 text-white` : `border-black bg-white`}`}
+                    >{category.lable}</button>
+               ))}
           </div>
-          <div className={`flex flex-col gap-[1rem] mt-[1rem] w-full`}>
+          <div className={`flex flex-col gap-[.5rem] mt-[.6rem] w-full`}>
                <div className={``}>
-                    <label htmlFor="">Name</label>
-                    <input type="text" className={`w-full border-gray-600 border-b-2 outline-none p-1 px-3`} placeholder='Menu name' />
+                    <label htmlFor="" className={`text-sm`}>Name</label>
+                    <input type="text" className={`w-full border-gray-600 border-b-2 text-xs outline-none p-1 px-3`} placeholder='Menu name' />
                </div>
                <div className={``}>
-                    <label htmlFor="">Price</label>
-                    <input type="text" className={`w-full border-gray-600 border-b-2 outline-none p-1 px-3`} placeholder='Rwf' />
+                    <label htmlFor="" className={`text-sm`}>Price</label>
+                    <input type="text" className={`w-full border-gray-600 border-b-2 text-xs outline-none p-1 px-3`} placeholder='Rwf' />
                </div>
                <div className={``}>
-                    <label htmlFor="">Menu description</label>
-                    <input type="text" className={`w-full border-gray-600 border-b-2 outline-none p-1 px-3`} placeholder='Ingredients' />
+                    <label htmlFor="" className={`text-sm`}>Menu description</label>
+                    <input type="text" className={`w-full border-gray-600 border-b-2 text-xs outline-none p-1 px-3`} placeholder='Ingredients' />
                </div>
                <div className={``}>
-                    <label htmlFor="">Image</label>
-                    <input type="file" className={`w-full border-gray-600 border-b-2 outline-none p-1 px-3`} />
+                    <label htmlFor="" className={`text-sm`}>Image</label>
+                    <input type="file" className={`w-full border-gray-600 border-b-2 text-xs outline-none p-1 px-3`} />
                </div>
           </div>
-          <div className={`flex justify-center items-center mt-5`}>
-               <button type="submit" className={`px-[2rem] py-[.7rem] border-amber-500 border-2 font-bold rounded-lg`}>Add More</button>
+          <div className={`flex justify-center items-center mt-3`}>
+               <button type="button" className={`px-[2rem] py-[.3rem] border-amber-500 border-2 text-sm font-bold rounded-lg`}>Add More</button>
           </div>
-     </div>
+     </form>
   )
 }
 
